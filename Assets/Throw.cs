@@ -35,7 +35,7 @@ public class Throw : MonoBehaviour
         {
             updateY = false;
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), Time.deltaTime * 40); //Return To Player
-           
+           //Woo
         }
 
      }
