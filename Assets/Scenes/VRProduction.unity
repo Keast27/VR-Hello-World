@@ -1612,7 +1612,44 @@ MonoBehaviour:
   input:
     actionPath: /actions/default/in/TouchPad
     needsReinit: 0
-  speed: 1
+  speed: 5
+--- !u!143 &1659346504
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659346502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1755432684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 2e710f2b5a4f9674183207e79056e879,
+    type: 3}
+  m_PrefabInstance: {fileID: 265797164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1755432688
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755432684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.009999997, z: 0.0013338383}
+  m_Center: {x: -0.0000000036451615, y: -0.0000000072892594, z: 0.009333137}
 --- !u!1 &1998920733
 GameObject:
   m_ObjectHideFlags: 0
