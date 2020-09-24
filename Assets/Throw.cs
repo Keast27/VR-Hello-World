@@ -24,9 +24,14 @@ public class Throw : MonoBehaviour
         {
             ycurrent = gameObject.transform.position.y;
         }
+
+        if(GetComponent<Interactable>().attachedToHand == null)
+        {
+            ReturntoPlayer();
+        }
     }
 
-    public void OnDetachedFromHand()
+    public void ReturntoPlayer()
     {
         yinitial = gameObject.transform.position.y;
         ycurrent = yinitial;
@@ -37,7 +42,6 @@ public class Throw : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), Time.deltaTime * 40); //Return To Player
            //Woo
         }
-
      }
  }
 
