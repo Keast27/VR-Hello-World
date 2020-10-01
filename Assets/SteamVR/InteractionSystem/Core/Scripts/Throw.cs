@@ -35,7 +35,7 @@ namespace WorkFudger
             if (GetComponent<Interactable>().attachedToHand == null)
             {
 
-                while(thrown == true)
+                if(thrown == true)
                 {
                     Vector3 vDirection = player.transform.position - transform.position;
                     if (vDirection.magnitude > 10)
