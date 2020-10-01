@@ -7,6 +7,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using System.Collections.Generic;
+using WorkFudger;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -53,8 +55,10 @@ namespace Valve.VR.InteractionSystem
         public UnityEvent onDetachFromHand;
         public HandEvent onHeldUpdate;
 
-
+        private float yinitial = 0.0f;
         protected RigidbodyInterpolation hadInterpolation = RigidbodyInterpolation.None;
+
+        
 
         protected new Rigidbody rigidbody;
 
@@ -176,6 +180,10 @@ namespace Valve.VR.InteractionSystem
 
             rigidbody.velocity = velocity;
             rigidbody.angularVelocity = angularVelocity;
+            //Set yinitial
+            //yinitial = gameObject.GetComponent
+            GetComponent<Throw>().yinitial = gameObject.transform.position.y;
+            GetComponent<Throw>().thrown = true;
         }
 
 
@@ -192,6 +200,7 @@ namespace Valve.VR.InteractionSystem
                         velocityEstimator.FinishEstimatingVelocity();
                         velocity = velocityEstimator.GetVelocityEstimate();
                         angularVelocity = velocityEstimator.GetAngularVelocityEstimate();
+                       
                     }
                     else
                     {
