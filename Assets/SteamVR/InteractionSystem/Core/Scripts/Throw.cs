@@ -17,6 +17,7 @@ namespace WorkFudger
         public bool thrown = false;
         public GameObject player;
         bool updateY = false;
+        private bool returnPls = false;
         // Start is called before the first frame update
         void Start()
         {
@@ -28,14 +29,23 @@ namespace WorkFudger
         {
             ycurr = gameObject.transform.position.y;
             //  transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), Time.deltaTime * 40); //Return To Player
-
+            
            
 
             if (GetComponent<Interactable>().attachedToHand == null)
             {
-                if(thrown == true)
+
+                while(thrown == true)
                 {
-                    ReturntoPlayer();
+                    Vector3 vDirection = player.transform.position - transform.position;
+                    if (vDirection.magnitude > 10)
+                    {
+                        returnPls = true;
+                    }
+                    if(returnPls == true)
+                    {
+                        ReturntoPlayer();
+                    }
                 }
                
             }
@@ -55,6 +65,8 @@ namespace WorkFudger
 
                 transform.position += vDirection * speed;
             }
+            thrown = false;
+            returnPls = false;
         }
     }
 }
