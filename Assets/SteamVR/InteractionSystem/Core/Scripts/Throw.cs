@@ -10,6 +10,7 @@ namespace WorkFudger
 
     public class Throw : MonoBehaviour
     {
+        public float speed = 0.02f;
         public float yinitial = 0;
         public float ycurr = 0;
         float ycurrent = 0;
@@ -43,13 +44,16 @@ namespace WorkFudger
         public void ReturntoPlayer()
         {
             //yinitial = gameObject.transform.position.y;
-          
-           
-            if (ycurrent < yinitial)
+            Vector3 vDirection = player.transform.position - transform.position;
+            
+            while (vDirection.magnitude > 1)
             {
-               
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), Time.deltaTime * 40); //Return To Player
-                                                                                                                                                                                                           //Woo
+
+                // transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z), Time.deltaTime * 40); //Return To Player
+                vDirection = player.transform.position - transform.position;
+                vDirection.Normalize();
+
+                transform.position += vDirection * speed;
             }
         }
     }

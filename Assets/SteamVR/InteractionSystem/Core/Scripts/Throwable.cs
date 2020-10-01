@@ -176,10 +176,10 @@ namespace Valve.VR.InteractionSystem
             Vector3 velocity;
             Vector3 angularVelocity;
 
-            GetReleaseVelocities(hand, out velocity, out angularVelocity);
+            //GetReleaseVelocities(hand, out velocity, out angularVelocity);
 
-            rigidbody.velocity = velocity;
-            rigidbody.angularVelocity = angularVelocity;
+            //rigidbody.velocity = velocity;
+            //rigidbody.angularVelocity = angularVelocity;
             //Set yinitial
             //yinitial = gameObject.GetComponent
             GetComponent<Throw>().yinitial = gameObject.transform.position.y;
