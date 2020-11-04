@@ -68,4 +68,13 @@ public class DateHappiness : MonoBehaviour
     {
         currentHappiness += increment;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //decrease happiness if the player throws an object at the date
+        if(collision.gameObject.tag == "DateItem")
+        {
+            DecreaseHappiness(4);
+        }
+    }
 }

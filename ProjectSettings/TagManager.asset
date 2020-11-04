@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Date
   - Food
+  - DateItem
   layers:
   - Default
   - TransparentFX

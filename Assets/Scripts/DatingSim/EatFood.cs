@@ -18,18 +18,22 @@ public class EatFood : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //destroy it when you eat it
-        //Destroy(other.gameObject);
-
-        if (other.tag == "Food")
+        if (other.transform.gameObject.GetComponent<FoodScript>() != null)
         {
+            Debug.Log("Eating a food");
 
-            Debug.Log("Eating food");
+            //check the type of food and change date happiness
+            if (other.transform.gameObject.GetComponent<FoodScript>().type == FoodType.Animal)
+            {
+                GameObject.FindGameObjectWithTag("Date").GetComponent<DateHappiness>().DecreaseHappiness(3);
+            }
+            else
+            {
+                GameObject.FindGameObjectWithTag("Date").GetComponent<DateHappiness>().IncreaseHappiness(3);
+            }
 
-            //destroy it when you eat it
+            //destroy food when you eat it
             Destroy(other.gameObject);
-
-            //TODO: check the type of food and change date happiness
         }
     }
 }
