@@ -75,6 +75,9 @@ public class DateHappiness : MonoBehaviour
         if(collision.gameObject.tag == "DateItem")
         {
             DecreaseHappiness(4);
+
+            //play hit sound
+            GetComponent<AudioSource>().Play();
         }
     }
 }
